@@ -1,0 +1,35 @@
+<script>
+// var peso = 77;
+// var altura = 1.67;
+// var pesoDoAllan = 62;
+// var alturaDoAllan = 1.75;
+// var imcDoAllan = pesoDoAllan / (alturaDoAllan * alturaDoAllan)
+
+var pulaLinha = function() {
+  document.write("<br> <hr> <br>");
+};
+var mostra = function(frase) {
+  document.write("<big>" + frase + "</big>");
+  pulaLinha();
+};
+
+var calculaIMC = function(altura, peso){
+  var imc = peso / (altura * altura);
+  return imc;
+};
+
+var nome = prompt("bom dia! Qual seu nome?");
+var alturaDoUsuario = prompt(nome + ", Bom dia! Qual é a sua altura?");
+var pesodoUsuario = prompt("E qual seu peso " + nome + "?");
+var imcDoUsuario = calculaIMC(alturaDoUsuario, pesodoUsuario);
+
+var imcDoUsuario = Math.round(calculaIMC(alturaDoUsuario, pesodoUsuario));
+document.write("Bem vindo, " + nome);
+pulaLinha();
+mostra(nome + ", O seu IMC é " + imcDoUsuario);
+
+// calculaIMC(altura, peso);
+// mostra("Meu IMC é " + imc);
+// mostra("Ainda estou  " + (imc - 18.5) + " pontos acima do limite de magreza.");
+// mostra("Ainda estou  " + (35 - imc) + " pontos abaixo do limite de obesidade.");
+</script>

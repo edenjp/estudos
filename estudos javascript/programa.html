@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+var ano = 2016;
+var eu = 32;
+var fulano = 25;
+var ciclano = 26;
+var total = eu + fulano + ciclano;
+var media = total / 3;
+var pulaLinha = function() {
+  document.write("<br> <hr> <br>");
+};
+var mostra = function(frase) {
+  document.write("<big>" + frase + "</big>");
+  pulaLinha();
+};
+
+mostra("Eu nasci em: " + (ano - 32));
+mostra("Minha idade é: " + 32);
+mostra("Fulano nasceu em: " + (ano - 25));
+mostra("Ciclano nasceu em: " + (ano - 26));
+mostra("A soma de nossas idades é: " + (25 + 32 +26));
+mostra("A media das nossas idades é: " + ((25 + 32 +26)/3));
+mostra("A diferença de idade entre meu irmão e eu, é de: " + (39 - 32) + " anos");
+mostra("A media de gerações desde o ano zero é: " + (2017 / 28));
+mostra(ano);
+mostra("ano");
+//usando as variaveis criadas
+mostra("A soma de nossas idades é: " + total);
+mostra("A media de idades é: " + Math.round(media));
+mostra("A media de gerações desde o ano zero é: " + (2017 / 28).toFixed(2));
+console.log("esta mensagemm é aparece apenas no log");
+</script>

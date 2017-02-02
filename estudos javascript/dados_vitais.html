@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+
+<script>
+  var pulaLinha = function() {
+    document.write("<br> <hr> <br>");
+  };
+
+  var nome = prompt("bom dia! Qual seu nome?");
+  document.write("Bem vindo, " + nome);
+  pulaLinha();
+
+  var idade = prompt(nome + ", quantos anos você tem?");
+
+  var calculoDiasDeVida = function(idade) {
+    var dias = idade * 365;
+    return dias;
+  };
+
+  var dias = calculoDiasDeVida(idade);
+
+  document.write(nome + " você já viveu " + dias + " dias desde seu nascimento.");
+
+  var calculaBatimentos = function(dias) {
+    var batimentos = dias * 24 * 60 * 80;
+    return batimentos;
+  };
+
+  var batimentos = calculaBatimentos(dias);
+
+  pulaLinha();
+  document.write(nome + ", seu coração já bateu " + batimentos + " vezes. Haja coração!");
+</script>
