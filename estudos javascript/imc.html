@@ -1,10 +1,5 @@
+<meta charset="utf-8">
 <script>
-// var peso = 77;
-// var altura = 1.67;
-// var pesoDoAllan = 62;
-// var alturaDoAllan = 1.75;
-// var imcDoAllan = pesoDoAllan / (alturaDoAllan * alturaDoAllan)
-
 var pulaLinha = function() {
   document.write("<br> <hr> <br>");
 };
@@ -28,8 +23,7 @@ document.write("Bem vindo, " + nome);
 pulaLinha();
 mostra(nome + ", O seu IMC é " + imcDoUsuario);
 
-// calculaIMC(altura, peso);
-// mostra("Meu IMC é " + imc);
-// mostra("Ainda estou  " + (imc - 18.5) + " pontos acima do limite de magreza.");
-// mostra("Ainda estou  " + (35 - imc) + " pontos abaixo do limite de obesidade.");
+if (imcDoUsuario >= 18.5 && imcDoUsuario <= 35) {
+  mostra("Seu IMC indica que você está Entre os dois limites do peso.")
+}
 </script>
