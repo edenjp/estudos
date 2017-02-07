@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+  var mostra = function(frase) {
+    document.write("<big>" + frase + "</big> <br>");
+  };
+
+  var numeroPensado = Math.round(Math.random() * 1000);
+
+  for (var numeroDaTentativa = 1; numeroPensado != chute; numeroDaTentativa++) {
+    var chute = prompt("Qual você acha que é o numero que pensei?");
+
+    if(chute == numeroPensado) {
+      mostra("Parabens! Você acertou, pois eu pensei no numero " + numeroPensado);
+      break;
+    }else{
+      if (chute < numeroPensado){
+        alert("Você errou! você chutou " + chute + " um numero menor.Será que ainda tem mais tentativas?");
+      }else{
+        alert("Você errou! você chutou " + chute + " um numero maior.Será que ainda tem mais tentativas?")
+      }
+    }
+   }
+</script>

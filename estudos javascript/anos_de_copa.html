@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+  var mostra = function(frase) {
+    document.write("<big>" + frase + "</big> <br>");
+  };
+
+  var anosDeCopa = Math.round(prompt("Qual é o ano de inicio que você deseja saber?"))
+  var anoLimite = Math.round(prompt("Qual é o ano limite que você deseja saber?"))
+
+  while(anosDeCopa <= anoLimite) {
+   mostra(anosDeCopa + " tem copa!");
+    anosDeCopa = anosDeCopa + 4;
+  }
+
+  mostra("Ufa! Esses foram os anos de copa até 2014.")
+</script>

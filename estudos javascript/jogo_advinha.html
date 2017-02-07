@@ -12,15 +12,19 @@
 
   var chute = prompt("Pensei em um numero, qual você acha que é?");
 
+  if(isNaN(chute)) {
+    mostra("Apenas numeros são válidos!");
+  }
+
   if(chute == numeroPensado) {
-    mostra("Uau! Você acertou, pois eu pensei no numero " + numeroPensado)
+    mostra("Uau! Você acertou, pois eu pensei no numero " + numeroPensado);
   }else{
     mostra("Você errou! Eu tinha pensado no " + numeroPensado);
   }
 
-  if(chute > numeroPensado){
-    mostra("Você chutou " + chute + ", um numero maior.")
+  if(chute > numeroPensado && chute != isNaN(chute)){
+    mostra("Você chutou " + chute + ", um numero maior.");
   }else{
-    mostra("Você chutou " + chute + ", um numero menor")
+    mostra("Você chutou " + chute);
   }
 </script>

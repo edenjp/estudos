@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script>
+  var mostra = function(frase) {
+    document.write("<big>" + frase + "</big> <br>");
+  };
+
+  var anosDeOlimpiada = Math.round(prompt("Qual é o ano de inicio que você deseja saber?"))
+  var anoLimite = Math.round(prompt("Qual é o ano limite que você deseja saber?"))
+
+  while(anosDeOlimpiada <= anoLimite) {
+   mostra(anosDeOlimpiada + " tem Olimpiada!");
+    anosDeOlimpiada = anosDeOlimpiada + 4;
+  }
+
+  mostra("Ufa! Esses foram os anos de Olimpiada até " + anoLimite)
+</script>

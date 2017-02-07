@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<script>
+  var mostra = function(frase) {
+    document.write("<big>" + frase + "</big> <br>");
+  };
+
+  var numero = Math.round(prompt("Qual é o numero que você deseja saber a tabuada?"));
+
+  for(var multiplicador =1; multiplicador <= 10; multiplicador++){
+    mostra( numero + " x " + multiplicador + " = " + (numero * multiplicador));
+  }
+</script>
