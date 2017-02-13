@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<script>
+
+  var mostra = function(frase) {
+    document.write("<big>" + frase + "</big> <br>");
+  };
+
+  var sorteados = [];
+  var chutes = [];
+  var i = 0;
+
+
+  for (i = 0; i < 6; i++){
+    var numerosAleatorios = Math.round(Math.random() * 100);
+    sorteados.push(numerosAleatorios);
+    console.log(sorteados);
+  }
+
+  for (i = 0; i < 6; i++){
+    var chute = prompt("Qual o numero vc acha que será sorteado?");
+      chutes.push(chute);
+      console.log(chutes);
+  }
+
+  mostra("Os numeros sorteados foram: " + sorteados);
+  mostra("Você chutou os seguintes numeros: " + chutes);
+  if(chutes[i] != sorteados[i]) {
+    mostra("Que pena não foi dessa vez!");
+  }else{
+    mostra("Parabens! Você ganhou!");
+  }
+</script>
