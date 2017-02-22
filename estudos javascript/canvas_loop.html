@@ -1,26 +1,25 @@
 <canvas id="tela" width="600" height="400"></canvas>
 
 <script>
-  var desenhaQuadradoVerde = function (x,y) {
+  var desenhaQuadrado = function (x, y, color) {
     var tela = document.getElementById('tela');
     var c = tela.getContext("2d");
 
-    c.fillStyle="green";
+    c.fillStyle=(color)
     c.fillRect(x, y, 50, 50);
 
     c.strokeStyle="black";
     c.strokeRect(x, y, 50, 50);
+  }
+
+  var desenhaQuadradoVerde = function (x, y) {
+    var green = (fillStyle="green");
+    desenhaQuadrado(x, y, green);
   };
 
   var desenhaQuadradoVermelho = function (x,y) {
-    var tela = document.getElementById('tela');
-    var c = tela.getContext("2d");
-
-    c.fillStyle="red";
-    c.fillRect(x, y, 50, 50);
-
-    c.strokeStyle="black";
-    c.strokeRect(x, y, 50, 50);
+    var red = (fillStyle="red");
+    desenhaQuadrado(x, y, red);
   };
 
   var desenhaBolaAzul = function (x, y) {
