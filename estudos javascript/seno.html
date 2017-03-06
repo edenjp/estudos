@@ -1,0 +1,30 @@
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+  var tela = document.getElementById('tela');
+  var c = tela.getContext("2d");
+
+    c.fillStyle="blue";
+
+  var funcaoQradratica = function (x) {
+    return 0.01 * x * x;
+  }
+
+
+  var desenhaFuncao = function (funcaoMatematica) {
+    for(var  x = 0; x < 600; x = x + 1){
+      var y = funcaoMatematica(x);
+      console.log("para x= " + x + ", o y vale " + y);
+
+      c.beginPath();
+      c.arc(x, 400 - y, 2, 0, 2*Math.PI);
+      c.fill();
+    }
+  }
+
+  var funcaoSeno = function (x) {
+    return Math.sin(x/20) * 100 + 200;
+  }
+
+desenhaFuncao(funcaoSeno);
+</script>

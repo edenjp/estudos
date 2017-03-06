@@ -2,7 +2,7 @@
 <canvas id="tela" width="600" height="400"></canvas>
 <script>
 
-   var desenhaBolaAzul = function (x, y) {
+  var desenhaBolaAzul = function (x, y) {
     var tela = document.getElementById('tela');
     var c = tela.getContext("2d");
 
@@ -12,10 +12,12 @@
     c.fill();
   }
 
-   for(var  x = 0; x < 600; x = x + 50){
-    for(var y = 0; y < 400; y = y + 50){
-      desenhaBolaAzul((x + 25), 100);
-    }
-    document.write("<br>");
-   }
+  for(var  x = 0; x < 600; x = x + 50){
+    desenhaBolaAzul((x + 25), 100);
+  }
+
+  for(var y = 0; y < 400; y = y + 50){
+    desenhaBolaAzul((x + y), 100);
+  }
 </script>
+
