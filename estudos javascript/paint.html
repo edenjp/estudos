@@ -1,0 +1,97 @@
+<meta charset="utf-8">
+<canvas id="tela" width="800" height="600"></canvas>
+<canvas id="cores" width="300" height="600"></canvas>
+<!-- falta finalizar a ação de dar as cores no clique -->
+
+<script>
+  var tela = document.getElementById('tela');
+  var c = tela.getContext("2d");
+
+  var cores = document.getElementById('cores');
+  var p = cores.getContext("2d");
+
+  p.fillStyle="gray";
+  p.fillRect(0, 0, 50, 150);
+
+  c.fillStyle="gray";
+  c.fillRect(0, 0, 800, 600);
+
+  var desenhaQuadrado = function (x, y, color) {
+    var cores = document.getElementById('cores');
+    var p = cores.getContext("2d");
+
+    p.fillStyle=(color)
+    p.fillRect(x, y, 50, 50);
+
+    p.strokeStyle="black";
+    p.strokeRect(x, y, 50, 50);
+  }
+
+  var desenhaQuadradoVerde = function (x, y) {
+    var green = (fillStyle="green");
+    desenhaQuadrado(x, y, green);
+  };
+
+  var desenhaQuadradoVermelho = function (x,y) {
+    var red = (fillStyle="red");
+    desenhaQuadrado(x, y, red);
+  };
+
+  var desenhaQuadradoAzul = function (x,y) {
+    var blue = (fillStyle="blue");
+    desenhaQuadrado(x, y, blue);
+  };
+
+  var  x = 0;
+  desenhaQuadradoVerde(x,0);
+  desenhaQuadradoVermelho(x,50);
+  desenhaQuadradoAzul(x, 100);
+
+  var corEscolhida = function () {
+    if (desenhaQuadradoAzul.onclick){
+      c.fillStyle="blue";
+    }
+    if (desenhaQuadradoVermelho.onclick) {
+      c.fillStyle="red";
+    }
+    if (desenhaQuadradoVerde.onclick) {
+      c.fillStyle="green";
+    }
+  };
+
+  var desenhaCirculo = function (evento, color) {
+    var color = corEscolhida;
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    c.fillStyle=color;
+    c.beginPath();
+    c.arc(x, y, 10, 0, 2*3.14);
+    c.fill();
+
+    console.log("posição do clique: " + x + ", " + y);
+  };
+
+  var desenhaCirculoVermelho = function (evento) {
+    var green = (fillStyle="green");
+    desenhaCirculo(evento, green);
+  }
+
+  var desenhaCirculoVermelho = function (evento) {
+    var red = (fillStyle="red");
+    desenhaCirculo(evento, red);
+  }
+
+  var desenhaCirculoAzul = function (evento) {
+    var blue = (fillStyle="blue");
+    desenhaCirculo(evento, blue);
+  }
+
+  var desenhaCirculoVerde = function (evento) {
+    var green = (fillStyle="green");
+    desenhaCirculo(evento, green);
+  }
+
+
+  tela.onclick = desenhaCirculo;
+</script>

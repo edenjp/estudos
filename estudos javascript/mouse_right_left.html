@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<canvas id="tela" width="600" height="400"></canvas>
+
+<script>
+  var tela = document.getElementById('tela');
+  var c = tela.getContext("2d");
+
+  c.fillStyle="gray";
+  c.fillRect(0, 0, 600, 400);
+
+  var desenhaCirculo = function (evento, color) {
+    var x = evento.pageX - tela.offsetLeft;
+    var y = evento.pageY - tela.offsetTop;
+
+    c.fillStyle=(color);
+    c.beginPath();
+    c.arc(x, y, 10, 0, 2*3.14);
+    c.fill();
+
+    console.log("posição do clique: " + x + ", " + y);
+  };
+
+  var desenhaCirculoVermelho = function (evento) {
+    var red = (fillStyle="red");
+    desenhaCirculo(evento, red);
+  }
+
+  var desenhaCirculoAzul = function (evento) {
+    var blue = (fillStyle="blue");
+    desenhaCirculo(evento, blue);
+  }
+
+  tela.onclick = desenhaCirculoAzul;
+  tela.oncontextmenu = desenhaCirculoVermelho;
+</script>
+
