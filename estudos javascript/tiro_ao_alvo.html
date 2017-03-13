@@ -1,13 +1,11 @@
-<canvas id="tela" width="600" height="400"></canvas>
+<canvas id="tela" width="1000" height="800"></canvas>
+
 <script >
+// falta fazer a parte de pontuação e acerto no alvo
   var tela = document.getElementById('tela');
   var c = tela.getContext("2d");
 
-  var cor = function () {
-
-  }
-
-  var circulo = function (x, y, raio) {
+  var circulo = function (x, y, raio, cor) {
     c.fillStyle = cor;
     c.beginPath();
     c.arc(x, y, raio, 0, 2*Math.PI);
@@ -16,34 +14,32 @@
 
   var desenhaAlvo = function (x, y) {
     var raio = 40;
-    cor('white');
-    circulo(x, y, raio);
-    cor('red');
-    circulo(x, y, raio - 10);
-    cor('white');
-    circulo(x, y, raio - 20);
-    cor('red');
-    circulo(x, y, raio - 30);
+    circulo(x, y, raio, 'white');
+    circulo(x, y, raio - 10, 'red');
+    circulo(x, y, raio - 20, 'white');
+    circulo(x, y, raio - 30, 'red');
+    circulo(x, y, raio - 40, 'white');
+    circulo(x, y, raio - 50, 'red');
   };
 
   var alvoX;
   var alvoY;
 
   var limpa = function () {
-    c.clearRect(0, 0, 600, 400);
+    c.clearRect(0, 0, 1000, 800);
   };
 
-  var sorteia = function () {
-
+  var sorteia = function (n) {
+    return Math.round(Math.random() * n);
   }
 
   var desenha = function(){
     limpa();
-    alvoX = sorteia(600);
-    alvoY = sorteia(400);
+    alvoX = sorteia(1000);
+    alvoY = sorteia(800);
     desenhaAlvo(alvoX, alvoY);
   };
 
-  setInterval(desenha, 1000)
+  setInterval(desenha, 1000);
 
 </script>
