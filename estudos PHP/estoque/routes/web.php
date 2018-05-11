@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/produtos', function () {
-    return '<h1>Aqui ficaram os produtos</h1>';
-});
+Route::get('/produtos', 'ProdutoController@list');
