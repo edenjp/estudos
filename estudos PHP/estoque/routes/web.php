@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('/produtos', 'ProdutoController@list');
+Route::get('/produtos/new', 'ProdutoController@new');
+Route::post('/produtos/newIten', 'ProdutoController@newIten');
+Route::get('/produtos/show/{id}', 'ProdutoController@show')->where('id', '[0-9]+');
+Route::get('/produtos/json', 'ProdutoController@listJson');
+Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
+Route::get('/produtos/edit/{id}', 'ProdutoController@getEditItem');
+Route::post('/produtos/edit/{id}', 'ProdutoController@editItem');
