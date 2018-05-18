@@ -4,6 +4,7 @@ namespace estoque\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use estoque\Http\Requests\ProdutoRequest;
 use estoque\Produto;
 use Request;
 
@@ -31,18 +32,9 @@ class ProdutoController extends Controller
     return view('product.form-new');
   }
 
-  public function newIten()
+  public function newIten(ProdutoRequest $request)
   {
-    $validator = Validator::make(
-      ['nome' => Request::input('nome')],
-      ['nome' => 'required|min:5']
-    );
-
-    if ($validator->fails()) {
-      return redirect()->action('ProdutoController@new');
-    }
-
-    Produto::create(Request::all());
+    Produto::create($request->all());
 
     return redirect()->action('ProdutoController@list')
 			->withInput(Request::only('nome'));
