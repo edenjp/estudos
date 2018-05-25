@@ -23,3 +23,8 @@ Route::get('/produtos/json', 'ProdutoController@listJson');
 Route::get('/produtos/remove/{id}', 'ProdutoController@remove');
 Route::get('/produtos/edit/{id}', 'ProdutoController@getEditItem');
 Route::post('/produtos/edit/{id}', 'ProdutoController@editItem');
+Route::get('home', 'HomeController@index');
+Route::resource('login', 'LoginController');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('auth/logout',[ 'uses' => 'Auth\LoginController@logout', 'as' => 'logout' ]);

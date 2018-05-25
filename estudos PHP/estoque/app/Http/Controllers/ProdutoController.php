@@ -10,6 +10,12 @@ use Request;
 
 class ProdutoController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth',
+    ['only' => ['new', 'remove']]);
+  }
+
   public function list(){
     $produtos = Produto::all();
     return view('product.list')

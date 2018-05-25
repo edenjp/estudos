@@ -5,6 +5,9 @@ namespace estoque\Http\Controllers\Auth;
 use estoque\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+use Request;
+use Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -35,5 +38,11 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }

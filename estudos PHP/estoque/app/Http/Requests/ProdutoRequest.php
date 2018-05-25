@@ -34,7 +34,7 @@ class ProdutoRequest extends FormRequest
     public function messages()
     {
       return[
-        'required' => 'O campo :attribute não pode ficar vazio',
+        'required' => 'O campo :attribute não pode ficar vazio'
       ];
     }
 }
